@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Login from "./auth/login";
 import Logged from "./auth/logged";
+import ModalComponent from "./auth/ModalComponent";
 
 export default class App extends Component{
   constructor(props) {
@@ -13,6 +14,7 @@ export default class App extends Component{
     this.loginUser = this.loginUser.bind(this)
     this.setUser = this.setUser.bind(this)
   }
+  
 
   componentDidMount() {
     if(localStorage.getItem('user')) {
@@ -48,6 +50,7 @@ export default class App extends Component{
             !this.state.isLoggedIn &&
             <Login loginUser={this.loginUser} setUser = {this.setUser}/>
           }
+          <ModalComponent/>
         </div>
     );
   }
